@@ -5,8 +5,49 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:VitaminsAndTabletsApp"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        
+        Title="Vitamins&amp;Tablets" Height="457.377" Width="795.574"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+     TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+     TextElement.FontWeight="Regular"
+     TextElement.FontSize="13"
+     TextOptions.TextFormattingMode="Ideal"
+     TextOptions.TextRenderingMode="Auto"
+     Background="{DynamicResource MaterialDesignPaper}"
+     FontFamily="{DynamicResource MaterialDesignFont}" Icon="vitamins.png">
+    <Grid Name="RegistrationGrid">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="67*"/>
+            <ColumnDefinition Width="207*"/>
+            <ColumnDefinition Width="514*"/>
+        </Grid.ColumnDefinitions>
+        <TabControl HorizontalAlignment="Left" Height="250" Margin="185,81,0,0" VerticalAlignment="Top" Width="274" Grid.Column="1" Grid.ColumnSpan="2">
+            <TabItem Header="Вхід" Background="#FF6B00AB">
+                <Grid Background="#FFF1F1F1">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="99*"/>
+                        <ColumnDefinition Width="12*"/>
+                        <ColumnDefinition Width="163*"/>
+                    </Grid.ColumnDefinitions>
+                    <TextBox HorizontalAlignment="Left" Height="26" Margin="55,51,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150" Grid.ColumnSpan="3" Name="SignInLoginTextBox"/>
+                    <Label Content="Логін" HorizontalAlignment="Left" Margin="55,19,0,0" VerticalAlignment="Top" Height="32" Width="129" Grid.ColumnSpan="3"/>
+                    <TextBox HorizontalAlignment="Left" Height="26" Margin="55,114,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150" Grid.ColumnSpan="3" Name="SignInPasswordTextBox"/>
+                    <Label Content="Пароль" HorizontalAlignment="Left" Margin="55,82,0,0" VerticalAlignment="Top" Height="32" Width="89" Grid.ColumnSpan="3"/>
+                    <Button Name="SignInButton" Content="Підтвердити" HorizontalAlignment="Left" Margin="71,160,0,0" VerticalAlignment="Top" Width="124" Click="SignInButton_Click" Grid.ColumnSpan="3"/>
+                </Grid>
+
+            </TabItem>
+            <TabItem Header="Реєстрація" Background="#FF4F06F5">
+                <Grid Background="#FFF7F7F7" Margin="0,0,0,-27" Width="286">
+                    <TextBox HorizontalAlignment="Left" Height="26" Margin="55,89,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150" Name="EmailTextBox"/>
+                    <Label Content="Електронна пошта" HorizontalAlignment="Left" Margin="55,63,0,0" VerticalAlignment="Top" Height="32" Width="129"/>
+                    <TextBox Height="26" Margin="55,147,69,0" TextWrapping="Wrap" VerticalAlignment="Top" Name="PasswordTextBox"/>
+                    <Label Content="Пароль" HorizontalAlignment="Left" Margin="55,120,0,0" VerticalAlignment="Top" Height="32" Width="89"/>
+                    <TextBox HorizontalAlignment="Left" Height="26" Margin="55,32,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150" Name="LoginTextBox"/>
+                    <Label Content="Логін" HorizontalAlignment="Left" Margin="55,5,0,0" VerticalAlignment="Top" Height="27" Width="129"/>
+                    <Button Content="Підтвердити"  HorizontalAlignment="Left" Margin="73,187,0,0" VerticalAlignment="Top" Width="123" Click="SignUpButton_Click" Name="SignUpButton"/>
+                </Grid>
+            </TabItem>
+        </TabControl>
+        <Label x:Name="UserExistsLabel" Visibility="Collapsed" Content="Label" Grid.Column="2" HorizontalAlignment="Left" Margin="32,366,0,0" VerticalAlignment="Top"/>
     </Grid>
 </Window>
